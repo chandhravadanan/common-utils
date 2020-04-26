@@ -1,4 +1,8 @@
 
+function getDummyPromise(){
+    return new Promise((res, rej)=>{});
+}
+
 function isPost(req){
     return req.method === 'POST';
 }
@@ -53,6 +57,7 @@ function readInputStreamJson(req){
 }
 
 module.exports = {
+    getDummyPromise,
     isPost,
     sendJson,
     sendResponse,
