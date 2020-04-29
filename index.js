@@ -32,6 +32,13 @@ function isAlphaNumeric(str){
     return /^[a-z0-9]+$/i.test(str)
 }
 
+function isHexaDecimal(str){
+    if(!str){
+        return false
+    }
+    return /^[0-9a-fA-F]+$/.test(str)
+}
+
 function redirect(res, path){
     res.writeHead(302, {Location: path});
     res.end();
@@ -63,6 +70,7 @@ module.exports = {
     sendResponse,
     sendErrResponse,
     isEmpty,
+    isHexaDecimal,
     isAlphaNumeric,
     redirect,
     readInputStreamJson
