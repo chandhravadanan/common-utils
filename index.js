@@ -39,6 +39,10 @@ function isHexaDecimal(str){
     return /^[0-9a-fA-F]+$/.test(str)
 }
 
+function isValidMongoId(str){
+    return isHexaDecimal(str) && str.length==24
+}
+
 function redirect(res, path){
     res.writeHead(302, {Location: path});
     res.end();
@@ -71,6 +75,7 @@ module.exports = {
     sendErrResponse,
     isEmpty,
     isHexaDecimal,
+    isValidMongoId,
     isAlphaNumeric,
     redirect,
     readInputStreamJson
